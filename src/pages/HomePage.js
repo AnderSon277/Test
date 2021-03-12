@@ -1,16 +1,30 @@
-import React from "react";
+import React from 'react';
+import withAuth from '../hocs/withAuth';
+import { Row, Col, Image, Typography } from 'antd';
+import FormEvent from '../components/FormEvent';
+import CarouselNews from '../components/CarouselNews';
+import Footer from '../components/Footer';
+import FormIntershipsOfer from '../components/FormIntershipsOfer';
 
 const HomePage = () => {
-  return (
-    <div>
-      <h1>GOLAAAAAAA</h1>
-      <h2>HOLAAAAAAAAA</h2>
-      <h3>
-        HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa
-        <h1>HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h1>
-      </h3>
-      CHOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAS
-    </div>
-  );
+	const { Title } = Typography;
+
+	return (
+		<>
+			<CarouselNews />
+
+			<Row justify="center">
+				<Col>
+					<Title level={2}>Crea tu propio evento e invita a nuestra comunidad</Title>
+					<FormEvent></FormEvent>
+				</Col>
+				<Col>
+					<Image width={400} src="https://www.conmishijos.com/assets/posts/7000/7942-nina-bailando.jpg" />
+				</Col>
+			</Row>
+
+			<Footer />
+		</>
+	);
 };
-export default HomePage;
+export default withAuth(HomePage);
